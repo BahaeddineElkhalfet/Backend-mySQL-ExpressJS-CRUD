@@ -32,5 +32,22 @@ module.exports = {
                 res.status(200).send(result)
             }
         })
+    },
+    // func update data in the table selected in the query (exampleTable in this case) 
+
+    upDate: (req, res) => {
+        let id = req.params.id
+        let data = {
+            example: req.body.example,
+            description: req.body.description
+        }
+        let sqlQuery = `UPDATE  exampleTable SET ? WHERE id=?`
+        db.query(sqlQuery, [data, id], (err, result) => {
+            if (err) res.status(500).send(err)
+            else {
+                console.log("item changed successfully from your DB");
+                res.status(200).send(result)
+            }
+        })
     }
 }
