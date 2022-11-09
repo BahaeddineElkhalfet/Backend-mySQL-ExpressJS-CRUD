@@ -1,10 +1,23 @@
 var db = require('../models/')
 
 module.exports = {
+    // func to retrieve all data from the table selected in the query (exampleTable in this case) 
     getAll: (req, res) => {
-        db.query('SELECT * FROM exampleTable', (err, result) => {
+        let sqlQuery = 'SELECT * FROM exampleTable'
+        db.query(sqlQuery, (err, result) => {
             if (err) res.status(500).send(err)
             else res.status(200).send(result)
+        })
+    },
+        // func to insert items in the database to the table selected in the query (exampleTable in this case) 
+    add: (req, res) => {
+        let sqlQuery = 'INSERT INTO exampleTable (example,description) values (?,?)'
+        db.query(sqlQuery, [req.body.example,req.body.description], (err, result) => {
+            if (err) res.status(500).send(err)
+            else {
+                console.log("item added successfully in your DB");
+                res.status(200).send(result)
+            }
         })
     }
 }
