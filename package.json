@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/BahaeddineElkhalfet/Backend-mySQL-ExpressJS/issues"
   },
-  "homepage": "https://github.com/BahaeddineElkhalfet/Backend-mySQL-ExpressJS#readme"
+  "homepage": "https://github.com/BahaeddineElkhalfet/Backend-mySQL-ExpressJS#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
 }
