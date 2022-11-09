@@ -1,0 +1,24 @@
+{
+  "name": "backend-mysql-expressjs",
+  "version": "1.0.0",
+  "description": "in this repo I use mySQL with row query to build a backend CRUD ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BahaeddineElkhalfet/Backend-mySQL-ExpressJS.git"
+  },
+  "keywords": [
+    "backend",
+    "MySQL",
+    "Express"
+  ],
+  "author": "Bahaeddine_EL_Khalfet",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BahaeddineElkhalfet/Backend-mySQL-ExpressJS/issues"
+  },
+  "homepage": "https://github.com/BahaeddineElkhalfet/Backend-mySQL-ExpressJS#readme"
+}
