@@ -9,6 +9,17 @@ module.exports = {
       else res.status(200).send(result);
     });
   },
+
+  // func to retrieve all data from the table selected in the query (exampleTable in this case)
+  getOne: (req, res) => {
+    let id = req.params.id;
+    let sqlQuery = `SELECT * FROM exampleTable WHERE id=${id}`;
+    db.query(sqlQuery, (err, result) => {
+      if (err) res.status(500).send(err);
+      else res.status(200).send(result);
+    });
+  },
+
   // func to insert items in the database to the table selected in the query (exampleTable in this case)
   add: (req, res) => {
     let sqlQuery =
@@ -25,6 +36,7 @@ module.exports = {
       },
     );
   },
+
   // func delete data from the table selected in the query (exampleTable in this case)
   // We target the id because it's unique
   delete: (req, res) => {
@@ -38,8 +50,8 @@ module.exports = {
       }
     });
   },
-  // func update data in the table selected in the query (exampleTable in this case)
 
+  // func update data in the table selected in the query (exampleTable in this case)
   upDate: (req, res) => {
     let id = req.params.id;
     let data = {
